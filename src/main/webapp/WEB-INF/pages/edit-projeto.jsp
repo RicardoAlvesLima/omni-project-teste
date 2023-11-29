@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <div class="modal fade" id="editar-projeto-modal" tabindex="-1" aria-labelledby="editar-projeto-modal" aria-hidden="true">
     <div class="row g-3">
         <div class="modal-dialog">
@@ -25,11 +27,11 @@
                         <input class="form-control form-control-sm" id="input-nome-projeto-edit">
                     </div>
                     <div class="col-auto">
-                        <label for="input-data-inicio-projeto-edit">Data Inicio</label>
+                        <label for="input-data-inicio-projeto-edit">Data Início</label>
                         <input type="date" class="form-control form-control-sm" id="input-data-inicio-projeto-edit">
                     </div>
                     <div class="col-auto">
-                        <label for="input-data-previsao-fim-projeto-edit">Data Previsao Fim</label>
+                        <label for="input-data-previsao-fim-projeto-edit">Data Previsão Fim</label>
                         <input type="date" class="form-control form-control-sm" id="input-data-previsao-fim-projeto-edit">
                     </div>
                     <div class="col-auto">
@@ -37,15 +39,15 @@
                         <input type="date" class="form-control form-control-sm" id="input-data-fim-projeto-edit">
                     </div>
                     <div class="col-auto">
-                        <label for="input-descricao-projeto-edit" class="form-label">Descricao</label>
+                        <label for="input-descricao-projeto-edit" class="form-label">Descrição</label>
                         <textarea class="form-control" id="input-descricao-projeto-edit" rows="3"></textarea>
                     </div>
                     <div class="col-auto">
-                        <label for="input-orcamento-projeto-edit">Orcamento</label>
+                        <label for="input-orcamento-projeto-edit">Orçamento</label>
                         <input class="form-control form-control-sm" id="input-orcamento-projeto-edit">
                     </div>
                     <div class="col-auto">
-                        <label for="input-gerente-projeto-edit" >Gerente Responsavel</label>
+                        <label for="input-gerente-projeto-edit" >Gerente Responsável</label>
                         <select class="form-control form-control-sm" id="input-gerente-projeto-edit"></select>
                     </div>
                 </div>

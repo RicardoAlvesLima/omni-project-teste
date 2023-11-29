@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <div class="modal fade" id="editar-membros-projeto-modal" tabindex="-1" aria-labelledby="editar-membros-projeto-modal" aria-hidden="true">
     <div class="row g-3">
         <div class="modal-dialog">
@@ -13,7 +15,7 @@
                         <input class="form-control form-control-sm" id="input-membros-id-projeto-edit">
                     </div>
                     <div class="col-auto">
-                        <label for="input-membros-projeto-edit" >Selecione um funcionario</label>
+                        <label for="input-membros-projeto-edit" >Selecione um funcionário</label>
                         <select class="form-control form-control-sm" id="input-membros-projeto-edit" onchange="addMembro(this)"></select>
                     </div>
                     <ul id="list-membros-projeto-edit" class="list-group">
