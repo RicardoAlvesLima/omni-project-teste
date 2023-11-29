@@ -1,39 +1,50 @@
 package br.com.omnitech.omniproject.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
-@Data
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Pessoa {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "datanascimento")
-    private Date datanascimento;
+    private LocalDate datanascimento;
 
-    @Column(name = "cpf")
     private String cpf;
 
-    @Column(name = "funcionario")
     private Boolean funcionario;
 
-    @Column(name = "gerente")
     private Boolean gerente;
 
-    @ManyToMany
-    @JoinTable(
-            name = "membros",
-            joinColumns = @JoinColumn(name = "idpessoa"),
-            inverseJoinColumns = @JoinColumn(name = "idprojeto"))
-    private Set<Projeto> projetos;
+    @ManyToMany(mappedBy = "pessoas")
+    private Set<Projeto> projetos = new HashSet<>();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return Objects.equals(id, pessoa.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

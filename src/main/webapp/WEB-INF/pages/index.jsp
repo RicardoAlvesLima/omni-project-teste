@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -11,7 +11,7 @@
     <link href="style/index.css" rel="stylesheet" type="text/css">
 </head>
 <body
-        class="d-flex flex-column gap-3 p-3"
+        class="body-container d-flex flex-column gap-3 p-3"
         style="background: #f3f3f3"
 >
 
@@ -22,40 +22,75 @@
                  width="30" height="24" class="d-inline-block align-text-top">
             OmniProjects
         </a>
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Status
-            </button>
-            <ul class="dropdown-menu">
-                <li>
-                    <button class="dropdown-item" type="button">Action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Another action</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" type="button">Something else here</button>
-                </li>
-            </ul>
-        </div>
+
+
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                data-bs-target="#criar-projeto-modal">
+            Criar Projeto
+        </button>
     </div>
 </nav>
 
-<div class="d-flex flex-wrap gap-3">
-    <c:forEach items="${projetos}" var="projeto">
-        <div class="card op-card overflow-hidden" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+<div class="d-flex flex-row pb-3 gap-3 overflow-x-scroll">
+    <div class="board-column">
+        <label class="board-column-title mb-2">Em Análise</label>
+        <div id="em-analise-board" class="d-flex flex-column gap-2">
         </div>
-    </c:forEach>
+    </div>
+
+    <div class="board-column">
+        <label class="board-column-title mb-2">Análise Realizada</label>
+        <div id="analise-realizada-board" class="d-flex flex-column gap-2">
+        </div>
+    </div>
+
+    <div class="board-column">
+        <label class="board-column-title mb-2">Análise Aprovada</label>
+        <div id="analise-aprovada-board" class="d-flex flex-column gap-2">
+        </div>
+    </div>
+
+    <div class="board-column">
+        <label class="board-column-title mb-2">Iniciado</label>
+        <div id="iniciado-board" class="d-flex flex-column gap-2">
+        </div>
+    </div>
+
+    <div class="board-column">
+        <label class="board-column-title mb-2">Planejado</label>
+        <div id="planejado-board" class="d-flex flex-column gap-2">
+        </div>
+    </div>
+
+    <div class="board-column">
+        <label class="board-column-title mb-2">Em Andamento</label>
+        <div id="em-andamento-board" class="d-flex flex-column gap-2">
+        </div>
+    </div>
+
+    <div class="board-column">
+        <label class="board-column-title mb-2">Encerrado</label>
+        <div id="encerrado-board" class="d-flex flex-column gap-2">
+        </div>
+    </div>
+
+    <div class="board-column">
+        <label class="board-column-title mb-2">Cancelado</label>
+        <div id="cancelado-board" class="d-flex flex-column gap-2">
+        </div>
+    </div>
 </div>
 
+<div id="toast-container" class="d-flex flex-column position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+
+</div>
+
+<jsp:include page="criar-projeto.jsp"/>
+<jsp:include page="edit-membros-projeto.jsp"/>
+<jsp:include page="edit-projeto.jsp"/>
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

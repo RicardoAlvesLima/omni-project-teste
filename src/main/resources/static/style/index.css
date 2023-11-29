@@ -1,12 +1,31 @@
+.criar-projeto-modal-content,
+.editar-projeto-modal-content,
+.editar-membros-projeto-modal-content{
+    min-width: 25rem;
+}
+
 body {
     font-family: "Sora-Regular_Light", serif;
 }
 
+.board-column {
+    box-sizing: initial;
+    min-width: 18rem;
+    min-height: 80vh;
+    padding: 20px;
+    background: white;
+}
+
+.board-column .board-column-title {
+    width: 100%;
+    text-align: center;
+}
+
 .op-card {
     transition: box-shadow 0.2s;
-    border-radius: var(--bs-border-radius-xl);
+    box-shadow: var(--bs-box-shadow);
 }
 
 .op-card:hover {
-    box-shadow: var(--bs-box-shadow);
+    box-shadow: var(--bs-box-shadow-lg);
 }

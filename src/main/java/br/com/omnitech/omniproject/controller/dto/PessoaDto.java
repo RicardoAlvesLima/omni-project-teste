@@ -1,39 +1,21 @@
-package br.com.omnitech.omniproject.model;
+package br.com.omnitech.omniproject.controller.dto;
 
-import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Date;
-import java.util.Set;
+import java.time.LocalDate;
 
 @Data
-@Entity
-public class Pessoa {
+public class PessoaDto {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "datanascimento")
-    private Date datanascimento;
+    private LocalDate datanascimento;
 
-    @Column(name = "cpf")
     private String cpf;
 
-    @Column(name = "funcionario")
     private Boolean funcionario;
 
-    @Column(name = "gerente")
     private Boolean gerente;
-
-    @ManyToMany
-    @JoinTable(
-            name = "membros",
-            joinColumns = @JoinColumn(name = "idpessoa"),
-            inverseJoinColumns = @JoinColumn(name = "idprojeto"))
-    private Set<Projeto> projetos;
 }

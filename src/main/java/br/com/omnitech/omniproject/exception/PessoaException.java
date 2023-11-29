@@ -1,8 +1,8 @@
 package br.com.omnitech.omniproject.exception;
 
-public class ProjetoException extends RuntimeException {
+public class PessoaException extends RuntimeException {
 
-    public ProjetoException(String message) {
+    public PessoaException(String message) {
         super(message);
     }
 }

@@ -1,48 +1,35 @@
-package br.com.omnitech.omniproject.model;
+package br.com.omnitech.omniproject.controller.dto;
 
-import jakarta.persistence.*;
+import br.com.omnitech.omniproject.enums.ProjetoRiscoEnum;
+import br.com.omnitech.omniproject.enums.ProjetoStatusEnum;
 import lombok.Data;
 
-import java.sql.Date;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
-@Entity
-public class Projeto {
+public class ProjetoDto {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "data_inicio")
-    private Date dataInicio;
+    private LocalDate dataInicio;
 
-    @Column(name = "data_previsao_fim")
-    private Date dataPrevisaoFim;
+    private LocalDate dataPrevisaoFim;
 
-    @Column(name = "data_fim")
-    private Date dataFim;
+    private LocalDate dataFim;
 
-    @Column(name = "descricao")
     private String descricao;
 
-    @Column(name = "status")
-    private String status;
+    private ProjetoStatusEnum status;
 
-    @Column(name = "orcamento")
     private Double orcamento;
 
-    @Column(name = "risco")
-    private String risco;
+    private ProjetoRiscoEnum risco;
 
-    @Column(name = "idgerente")
     private Long idgerente;
 
-    @ManyToMany(mappedBy = "projetos")
-    private Set<Pessoa> pessoas;
+    private Set<PessoaDto> pessoas = new HashSet<>();
 }
