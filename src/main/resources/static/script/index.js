@@ -41,6 +41,7 @@ const createProjectDOM = (projeto) => {
                         <label class="fw-bold">Risco:</label>
                         <span class="badge w-100 ${riscoClassColor[projeto.risco]}">${risco[projeto.risco]}</span>
                     </div>
+                    
                     <div class="d-flex gap-2 align-items-center">
                         <label class="fw-bold">Status:</label>
                         <select class="status-projeto-select-${projeto.id} w-100 form-select form-select-sm" onchange="changeStatus(${projeto.id}, this)"></select>
@@ -50,6 +51,24 @@ const createProjectDOM = (projeto) => {
                         <label class="fw-bold">Descrição:</label>
                         <p class="card-text small">${projeto.descricao}</p>
                     </div>
+                    
+                    <div class="d-flex gap-2 align-items-center">
+                        <label class="fw-bold">Início:</label>
+                        <p class="card-text small">${projeto.dataInicio}</p>
+                    </div>
+                    
+                    ${projeto.dataPrevisaoFim ? 
+                        `<div class="d-flex gap-2 align-items-center">
+                            <label class="fw-bold">Previsão:</label>
+                            <p class="card-text small">${projeto.dataPrevisaoFim}</p>
+                        </div>` : ``}
+                    
+                    ${projeto.dataFim ?
+                        `<div class="d-flex gap-2 align-items-center">
+                            <label class="fw-bold">Fim:</label>
+                            <p class="card-text small">${projeto.dataFim}</p>
+                        </div>` : ``}
+                    
                     <div class="d-flex justify-content-end gap-1 w-100">
                         <a onclick="loadMembros(${projeto.id})" class="d-flex btn btn-sm btn-primary align-items-center" data-bs-toggle="modal" data-bs-target="#editar-membros-projeto-modal">
                             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
