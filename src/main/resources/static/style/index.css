@@ -1,0 +1,12 @@
+body {
+    font-family: "Sora-Regular_Light", serif;
+}
+
+.op-card {
+    transition: box-shadow 0.2s;
+    border-radius: var(--bs-border-radius-xl);
+}
+
+.op-card:hover {
+    box-shadow: var(--bs-box-shadow);
+}
