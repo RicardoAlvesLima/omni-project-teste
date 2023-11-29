@@ -48,15 +48,14 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     public Projeto changeStatusById(Long id, ProjetoStatusEnum status) {
-        Projeto projeto = repository.findById(id).orElseThrow(RuntimeException::new);
+        Projeto projeto = findById(id);
 
         projeto.setStatus(status);
         return repository.save(projeto);
     }
 
     public void delete(Long id) {
-        Projeto projeto = repository.findById(id)
-                .orElseThrow(() -> new ProjetoException("Projeto não encontrado"));
+        Projeto projeto = findById(id);
 
         if (INICIADO.equals(projeto.getStatus()) || EM_ANDAMENTO.equals(projeto.getStatus()) || ENCERRADO.equals(projeto.getStatus())) {
             throw new ProjetoException("Projetos nos status Iniciado, Em Andamento ou Encerrado não podem ser excluidos");
