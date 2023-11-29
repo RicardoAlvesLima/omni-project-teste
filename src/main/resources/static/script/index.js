@@ -34,7 +34,7 @@ const riscoClassColor = {
 
 const createProjectDOM = (projeto) => {
     $(`#${statusBoardsIds[projeto.status]}`).append(
-        `<div id="${projeto.id}" class="card op-card" style="width: 18rem;">
+        `<div id="${projeto.id}" class="card op-card animate__animated animate__zoomIn animate__fast" style="width: 18rem;">
                 <div class="d-flex flex-column gap-3 card-body">
                     <h5 class="card-title">${projeto.nome}</h5>
                     <div class="d-flex gap-2 align-items-center">
@@ -87,7 +87,7 @@ const createProjectDOM = (projeto) => {
 
 const createMembroDOM = (id, nome) => {
     $(`#list-membros-projeto-edit`).append(
-        `<li class="list-group-item d-flex justify-content-between align-items-center">
+        `<li class="item-membro list-group-item d-flex justify-content-between align-items-center">
             <input class="list-membros-id-edit form-control form-control-sm" hidden value="${id}">
             ${nome}
             <a class="d-flex btn btn-sm btn-danger align-items-center" onclick="removeMembro(this)">
@@ -273,7 +273,12 @@ const deletarProjeto = (id, event) => {
         },
         success: (response) => {
             notifySuccess(response.message)
-            event.parentElement.parentElement.parentElement.remove()
+            const element = document.getElementById(id)
+            element.classList.add('animate__animated', 'animate__zoomOut', 'animate__fast')
+
+            element.addEventListener('animationend', () => {
+                event.parentElement.parentElement.parentElement.remove()
+            })
         },
         error: (response) => {
             notifyError(response.responseJSON.message)
@@ -290,9 +295,14 @@ const changeStatus = (id, event) => {
             status: event.value
         },
         success: (response) => {
-            event.parentElement.parentElement.parentElement.remove()
-            createProjectDOM(response)
-            loadStatusOptionsByClass(response)
+            const element = document.getElementById(id)
+            element.classList.add('animate__animated', 'animate__zoomOut', 'animate__fast')
+
+            element.addEventListener('animationend', () => {
+                event.parentElement.parentElement.parentElement.remove()
+                createProjectDOM(response)
+                loadStatusOptionsByClass(response)
+            })
         }
     });
 }

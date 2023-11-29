@@ -4,6 +4,11 @@
     min-width: 25rem;
 }
 
+* {
+    transition: max-height 2s ease-out;
+
+}
+
 body {
     font-family: "Sora-Regular_Light", serif;
     background: #6082b9;
@@ -31,4 +36,8 @@ body {
 
 .op-card:hover {
     box-shadow: var(--bs-box-shadow-lg);
+}
+
+.item-membro {
+    background: #e8edff;
 }

@@ -9,10 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="style/index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body class="body-container d-flex flex-column gap-3 p-3">
 
-<nav class="navbar p-3 bg-white navbar-expand-lg shadow-sm rounded-2">
+<nav class="navbar p-3 bg-white navbar-expand-lg shadow-sm rounded-2 animate__animated animate__fadeIn">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="https://seeklogo.com/images/R/risingwave-icon-logo-837E37238C-seeklogo.com.png" alt="Logo"
@@ -28,7 +29,7 @@
     </div>
 </nav>
 
-<div class="d-flex flex-row pb-3 gap-3 overflow-x-scroll">
+<div class="d-flex flex-row pb-3 gap-3 overflow-x-scroll animate__animated animate__fadeIn">
     <div class="board-column">
         <label class="board-column-title mb-2">Em Análise</label>
         <div id="em-analise-board" class="d-flex flex-column gap-2">
