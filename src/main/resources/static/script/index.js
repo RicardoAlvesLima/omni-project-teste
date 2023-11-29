@@ -290,7 +290,7 @@ const changeStatus = (id, event) => {
             status: event.value
         },
         success: (response) => {
-            event.parentElement.parentElement.remove()
+            event.parentElement.parentElement.parentElement.remove()
             createProjectDOM(response)
             loadStatusOptionsByClass(response)
         }
