@@ -29,7 +29,7 @@ body {
 }
 
 .op-card {
-    background: #e8edff;
+    background: #f3f5ff;
     transition: box-shadow 0.2s;
     box-shadow: var(--bs-box-shadow);
 }
