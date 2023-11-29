@@ -6,6 +6,7 @@
 
 body {
     font-family: "Sora-Regular_Light", serif;
+    background: #6082b9;
 }
 
 .board-column {
@@ -14,6 +15,7 @@ body {
     min-height: 80vh;
     padding: 20px;
     background: white;
+    border-radius: var(--bs-border-radius);
 }
 
 .board-column .board-column-title {
@@ -22,6 +24,7 @@ body {
 }
 
 .op-card {
+    background: #e8edff;
     transition: box-shadow 0.2s;
     box-shadow: var(--bs-box-shadow);
 }

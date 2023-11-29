@@ -15,11 +15,13 @@
                         <input class="form-control form-control-sm" id="input-membros-id-projeto-edit">
                     </div>
                     <div class="col-auto">
-                        <label for="input-membros-projeto-edit" >Selecione um funcionário</label>
+                        <label class="fw-bolder" for="input-membros-projeto-edit" >Selecione um funcionário</label>
                         <select class="form-control form-control-sm" id="input-membros-projeto-edit" onchange="addMembro(this)"></select>
                     </div>
-                    <ul id="list-membros-projeto-edit" class="list-group">
-                    </ul>
+                    <div class="col-auto">
+                        <label class="fw-bolder" for="input-membros-projeto-edit" >Membros do projeto:</label>
+                        <ul id="list-membros-projeto-edit" class="list-group"></ul>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

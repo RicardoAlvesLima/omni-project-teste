@@ -10,10 +10,7 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="style/index.css" rel="stylesheet" type="text/css">
 </head>
-<body
-        class="body-container d-flex flex-column gap-3 p-3"
-        style="background: #f3f3f3"
->
+<body class="body-container d-flex flex-column gap-3 p-3">
 
 <nav class="navbar p-3 bg-white navbar-expand-lg shadow-sm rounded-2">
     <div class="container-fluid">
