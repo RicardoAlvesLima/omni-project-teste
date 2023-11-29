@@ -52,22 +52,22 @@ const createProjectDOM = (projeto) => {
                         <p class="card-text small">${projeto.descricao}</p>
                     </div>
                     
-                    <div class="d-flex gap-2 align-items-center">
-                        <label class="fw-bold">Início:</label>
-                        <p class="card-text small">${projeto.dataInicio}</p>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex gap-2 align-items-center">
+                            <label class="fw-bold">Início:</label>
+                            <p class="card-text small">${projeto.dataInicio}</p>
+                        </div>
+                        ${projeto.dataPrevisaoFim ? 
+                            `<div class="d-flex gap-2 align-items-center">
+                                <label class="fw-bold">Previsão:</label>
+                                <p class="card-text small">${projeto.dataPrevisaoFim}</p>
+                            </div>` : ``}
+                        ${projeto.dataFim ?
+                            `<div class="d-flex gap-2 align-items-center">
+                                <label class="fw-bold">Fim:</label>
+                                <p class="card-text small">${projeto.dataFim}</p>
+                            </div>` : ``}
                     </div>
-                    
-                    ${projeto.dataPrevisaoFim ? 
-                        `<div class="d-flex gap-2 align-items-center">
-                            <label class="fw-bold">Previsão:</label>
-                            <p class="card-text small">${projeto.dataPrevisaoFim}</p>
-                        </div>` : ``}
-                    
-                    ${projeto.dataFim ?
-                        `<div class="d-flex gap-2 align-items-center">
-                            <label class="fw-bold">Fim:</label>
-                            <p class="card-text small">${projeto.dataFim}</p>
-                        </div>` : ``}
                     
                     <div class="d-flex justify-content-end gap-1 w-100">
                         <a onclick="loadMembros(${projeto.id})" class="d-flex btn btn-sm btn-primary align-items-center" data-bs-toggle="modal" data-bs-target="#editar-membros-projeto-modal">
