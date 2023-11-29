@@ -244,7 +244,7 @@ const deletarProjeto = (id, event) => {
         },
         success: (response) => {
             notifySuccess(response.message)
-            event.parentElement.parentElement.remove()
+            event.parentElement.parentElement.parentElement.remove()
         },
         error: (response) => {
             notifyError(response.responseJSON.message)
