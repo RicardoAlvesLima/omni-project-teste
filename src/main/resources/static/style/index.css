@@ -4,11 +4,6 @@
     min-width: 25rem;
 }
 
-* {
-    transition: max-height 2s ease-out;
-
-}
-
 body {
     font-family: "Sora-Regular_Light", serif;
     background: #6082b9;
@@ -17,7 +12,7 @@ body {
 .board-column {
     box-sizing: initial;
     min-width: 18rem;
-    min-height: 80vh;
+    min-height: fit-content;
     padding: 20px;
     background: white;
     border-radius: var(--bs-border-radius);
@@ -39,5 +34,9 @@ body {
 }
 
 .item-membro {
-    background: #e8edff;
+    background: #f3f5ff;
+}
+
+.item-membro:hover {
+    background: #e4e9ff;
 }
