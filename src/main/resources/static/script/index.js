@@ -193,6 +193,8 @@ const loadFuncionarios = (projeto) => {
 }
 
 const loadGerentes = (edit, idgerente) => {
+    $(`#input-gerente-projeto-edit`).empty()
+
     $.get('/pessoas/gerentes', (response) => {
         [...response].forEach(g => {
             $(edit ? `#input-gerente-projeto-edit` : `#input-gerente-projeto`).append($("<option/>", {

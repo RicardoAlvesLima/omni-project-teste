@@ -47,7 +47,7 @@ public class Projeto {
 
     private Long idgerente;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(
             name = "membros",
             joinColumns = @JoinColumn(name = "idprojeto"),
