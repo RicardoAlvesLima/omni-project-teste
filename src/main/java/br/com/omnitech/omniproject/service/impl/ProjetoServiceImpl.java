@@ -68,6 +68,10 @@ public class ProjetoServiceImpl implements ProjetoService {
         Projeto projeto = findById(projetoId);
         Pessoa pessoa = pessoaService.findById(membroId);
 
+        if(Boolean.TRUE.equals(pessoa.getGerente())){
+            throw new ProjetoException("Apenas funcionários podem ser adicionados ao projeto");
+        }
+
         if (projeto.getPessoas().contains(pessoa)) {
             throw new ProjetoException("Funcionário ja faz parte do projeto");
         }
